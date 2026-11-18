@@ -33,10 +33,17 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Enable CORS for frontend Vite development
+# Enable CORS for unified domain and local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3000",
+        "https://smart-energy-ml-frontend.vercel.app",
+        "https://smart-energy-ml-frontend-mani-varma-s.vercel.app",
+    ],
+    allow_origin_regex=r"https:\/\/smart-energy-ml-frontend.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
