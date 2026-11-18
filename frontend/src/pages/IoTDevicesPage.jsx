@@ -16,7 +16,7 @@ import {
   Send,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { api } from '../services/api';
+import { api, API_BASE } from '../services/api';
 
 export default function IoTDevicesPage() {
   const { activeProperty, properties, operatingMode, setOperatingMode } = useApp();
@@ -80,7 +80,7 @@ export default function IoTDevicesPage() {
     setTestResult(null);
     try {
       // Ingest test reading directly through hardware ingestion endpoint
-      const res = await fetch('/api/iot/ingest', {
+      const res = await fetch(`${API_BASE}/iot/ingest`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

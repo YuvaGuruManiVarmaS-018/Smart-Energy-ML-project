@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { History, Download, AlertTriangle, Search, Filter } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { api } from '../services/api';
+import { api, API_BASE } from '../services/api';
 
 export default function EnergyHistoryPage() {
   const { activeProperty } = useApp();
@@ -49,7 +49,7 @@ export default function EnergyHistoryPage() {
         </div>
 
         <a
-          href={`/api/reports/download-telemetry-csv?property_id=${activeProperty?.id}`}
+          href={`${API_BASE}/reports/download-telemetry-csv?property_id=${activeProperty?.id}`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"

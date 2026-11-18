@@ -12,7 +12,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { api } from '../services/api';
+import { api, API_BASE } from '../services/api';
 
 export default function Module1DataPage() {
   const { activeProperty } = useApp();
@@ -128,7 +128,7 @@ export default function Module1DataPage() {
 
         {preview?.dataset_id && (
           <a
-            href={`/api/dataset/download-cleaned/${preview.dataset_id}`}
+            href={`${API_BASE}/dataset/download-cleaned/${preview.dataset_id}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

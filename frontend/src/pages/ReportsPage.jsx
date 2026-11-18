@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Plus, Download, CheckCircle2, TrendingDown } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { api } from '../services/api';
+import { api, API_BASE } from '../services/api';
 
 export default function ReportsPage() {
   const { activeProperty } = useApp();
@@ -106,7 +106,7 @@ export default function ReportsPage() {
                 </span>
 
                 <a
-                  href={`/api/reports/download-telemetry-csv?property_id=${activeProperty?.id}`}
+                  href={`${API_BASE}/reports/download-telemetry-csv?property_id=${activeProperty?.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
