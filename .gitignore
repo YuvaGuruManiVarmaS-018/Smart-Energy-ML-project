@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# SQLite & Runtime Databases
+*.db
+*.sqlite
+*.sqlite3
+backend/database/*.db
+backend/database/*.sqlite
+backend/database/*.sqlite3
+
+# Node & Frontend Build Artifacts
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ML Models & Serialized Artifacts
+ml/saved_models/*.pkl
+ml/saved_models/*.joblib
+ml/saved_models/*.pt
+ml/saved_models/*.pth
+ml/saved_models/*.onnx
+ml/saved_models/*.h5
+!ml/saved_models/.gitkeep
+
+# ML Outputs & Temporary Plots
+ml/outputs/*
+!ml/outputs/.gitkeep
+
+# Datasets, Archives & Generated Uploads
+dataset/*.zip
+dataset/*.tar.gz
+dataset/user_uploads/*
+!dataset/user_uploads/.gitkeep
+dataset/cleaned_datasets/*
+!dataset/cleaned_datasets/.gitkeep
+!dataset/.gitkeep
+!dataset/sample_energy_data.csv
+!dataset/smart_home_energy_consumption_large.csv
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDEs & System Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
