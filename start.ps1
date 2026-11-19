@@ -1,4 +1,4 @@
-﻿# VoltIQ - Single Application Local Launcher
+# VoltIQ - Single Application Local Launcher
 Write-Host "=====================================================" -ForegroundColor Cyan
 Write-Host "⚡ Starting VoltIQ Smart Energy Management Platform" -ForegroundColor Yellow
 Write-Host "=====================================================" -ForegroundColor Cyan

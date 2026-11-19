@@ -15,10 +15,8 @@ import {
   Settings,
   LogOut,
   Sparkles,
-  GraduationCap,
   Cpu,
   Activity,
-  Radio,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
@@ -62,10 +60,8 @@ export default function Sidebar() {
   ];
 
   const demoLinks = [
-    { to: '/demo', label: 'Faculty Viva Demo', icon: GraduationCap, badge: '11 STAGES', badgeColor: '#38bdf8' },
     { to: '/experiments', label: 'ML Benchmark Studio', icon: Cpu, badge: '3 MODELS', badgeColor: '#c084fc' },
     { to: '/activity', label: 'Backend Activity Logs', icon: Activity, badge: 'LIVE', badgeColor: '#34d399' },
-    { to: '/iot-devices', label: 'IoT Hardware (Mode C)', icon: Radio },
   ];
 
   const auxiliaryLinks = [
