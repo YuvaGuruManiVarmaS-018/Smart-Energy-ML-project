@@ -32,6 +32,16 @@ export async function apiRequest(endpoint, options = {}) {
   }
 
   if (!response.ok) {
+    if ((response.status === 502 || response.status === 504) && !options._isRetry) {
+      // Backend is waking up from idle on Render free tier; retry once automatically after 4s
+      await new Promise((r) => setTimeout(r, 4000));
+      return apiRequest(endpoint, { ...options, _isRetry: true });
+    }
+    if (response.status === 502 || response.status === 504) {
+      throw new Error(
+        'Server is waking up from idle mode (Render Free Tier takes ~30s on cold start). Please wait a moment and click Sign In again.'
+      );
+    }
     let errorDetail = `HTTP ${response.status}: ${response.statusText}`;
     try {
       const errJson = await response.json();

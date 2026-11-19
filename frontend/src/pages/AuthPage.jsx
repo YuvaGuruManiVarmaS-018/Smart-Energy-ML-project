@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Zap, Eye, EyeOff, Lock, Mail, User, Shield, KeyRound, Building2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { API_BASE } from '../services/api';
 
 export default function AuthPage() {
   const [isRegister, setIsRegister] = useState(false);
   const [joinWithCode, setJoinWithCode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
+
+  // Pre-wake backend on page load to eliminate Render cold start delay
+  useEffect(() => {
+    fetch(`${API_BASE}/health`).catch(() => {});
+  }, []);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
